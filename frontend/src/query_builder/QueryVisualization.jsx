@@ -139,9 +139,9 @@ export default class QueryVisualization extends Component {
     }
 
     renderDownloadButton() {
-        const { card, result } = this.props;
+        const { card, result, isObjectDetail } = this.props;
 
-        if (result && !result.error) {
+        if (result && !result.error && !isObjectDetail) {
             if (result && result.data && result.data.rows_truncated) {
                 // this is a "large" dataset, so show a modal to inform users about this and make them click again to d/l
                 let downloadButton;
